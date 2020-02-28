@@ -1,17 +1,24 @@
 package lab.assignment.beforerefactoring.clientcode;
 
-import lab.assignment.beforerefactoring.CoffeeMaker;
-
 public class CoffeeClient {
 
 
     public static void main(String[] args) {
-        CoffeeMaker starbuzz = new CoffeeMaker();
-        starbuzz.prepareMochaCoffee();
+        CoffeeTemplate coffeeType = new MochaCoffee();
+        System.out.println("Preparing Mocha Coffee");
+        coffeeType.prepareCoffee();
 
         System.out.println("********************");
 
-        starbuzz.prepareCapuccinoCoffee();
+        coffeeType = new CapuccinoCoffee();
+        System.out.println("Preparing Capuccino Coffee");
+        coffeeType.prepareCoffee();
+
+        System.out.println("********************");
+
+        coffeeType = new AmericanoCoffee();
+        System.out.println("Preparing Americano Coffee");
+        coffeeType.prepareCoffee();
 
     }
 
